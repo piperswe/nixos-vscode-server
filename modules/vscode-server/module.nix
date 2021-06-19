@@ -29,7 +29,7 @@ with lib;
             # Create a trigger to know when their node is being created and replace it for our symlink.
             touch "$bin_dir/node"
             inotifywait -qq -e DELETE_SELF "$bin_dir/node"
-            ln -sfT ${pkgs.nodejs-12_x}/bin/node "$bin_dir/node"
+            ln -sfT ${pkgs.nodejs-14_x}/bin/node "$bin_dir/node"
           # The monitored directory is deleted, e.g. when "Uninstall VS Code Server from Host" has been run.
           elif [[ $event == DELETE_SELF ]]; then
             # See the comments above Restart in the service config.
