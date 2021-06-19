@@ -21,7 +21,7 @@ with lib;
         PATH=${makeBinPath (with pkgs; [ coreutils inotify-tools ])}
         bin_dir=~/.vscode-server/bin
         [[ -e $bin_dir ]] &&
-        find "$bin_dir" -mindepth 2 -maxdepth 2 -name node -type f -exec ln -sfT ${pkgs.nodejs-12_x}/bin/node {} \; ||
+        find "$bin_dir" -mindepth 2 -maxdepth 2 -name node -type f -exec ln -sfT ${pkgs.nodejs-14_x}/bin/node {} \; ||
         mkdir -p "$bin_dir"
         while IFS=: read -r bin_dir event; do
           # A new version of the VS Code Server is being created.
